@@ -1,3 +1,7 @@
+<% /* Executes a query to see if the login and password match.  If they do, the user can go to the 
+main screen where he/she can do all the main functionality. Else the user must go back and enter in 
+login information again.*/ %>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@page import="java.sql.*" %>

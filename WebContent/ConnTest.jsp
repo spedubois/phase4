@@ -1,3 +1,7 @@
+<%/*This is where the user should start. Has options to login as an exisitin user, register as a new user,
+or view a list of all registered users*/%>
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="p1.Connector" %>

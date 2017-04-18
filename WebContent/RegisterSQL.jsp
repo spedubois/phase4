@@ -1,3 +1,7 @@
+<% /* User registers as a new user. If the login is already taken, the user must go back and enter in new
+user information. Else, the user may proceed to the main screen.*/ %>
+
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="java.sql.*" %>
