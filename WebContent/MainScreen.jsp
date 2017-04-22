@@ -12,8 +12,8 @@ and adding a new house.*/ %>
 </head>
 <h2>Welcome to the Uotel system</h2>
 <body>
-	<form action="todo.jsp">
-		<input type = "submit" value="Reserve a house TODO"/>
+	<form action="GetTH.jsp">
+		<input type = "submit" value="Reserve a house"/>
 	</form>
 	<form action="AddHouseInput.jsp">
 		<input type = "submit" value="Add new house"/>
