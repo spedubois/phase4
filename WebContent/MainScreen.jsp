@@ -12,6 +12,35 @@ and adding a new house.*/ %>
 </head>
 <h2>Welcome to the Uotel system</h2>
 <body>
-
+	<form action="todo.jsp">
+		<input type = "submit" value="Reserve a house TODO"/>
+	</form>
+	<form action="AddHouseInput.jsp">
+		<input type = "submit" value="Add new house"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Edit existing house TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Record a stay/stays at a house/houses TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Record a favorite house TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Record feedback for a house TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Rate usefulness of feedback TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Trust other users TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="Search for a house TODO"/>
+	</form>
+	<form action="todo.jsp">
+		<input type = "submit" value="View statistics TODO"/>
+	</form>
 </body>
 </html>

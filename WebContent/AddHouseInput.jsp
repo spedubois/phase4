@@ -9,13 +9,15 @@
 <title>Register New User</title>
 </head>
 <body>
-<h1>Register a new user</h1>
-<form action="RegisterSQL.jsp">
-	Enter your name:<input type="text" name="name"/><br>
-	Enter a login:<input type="text" name="login"/><br>
-	Enter your password:<input type="password" name="password"/><br>
-	Enter your address:<input type="text" name="address"/><br>
-	Enter your phone number:<input type="text" name="phone"/><br>
+<h1>Add a new house</h1>
+<form action="AddHouseSQL.jsp">
+	Enter the house's category:<input type="text" name="category"/><br>
+	Enter the house's url:<input type="text" name="url"/><br>
+	Enter the house's phone number:<input type="text" name="phone"/><br>
+	Enter the year built:<input type="text" name="year"/><br>
+	Enter the house's city:<input type="text" name="city"/><br>
+	Enter the house's state:<input type="text" name="state"/><br>
+	Enter the house's address:<input type="text" name="address"/><br>
 	Submit your information:<input type = "submit" value="Submit"/>
 </form>
 </body>
