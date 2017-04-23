@@ -18,8 +18,8 @@ and adding a new house.*/ %>
 	<form action="AddHouseInput.jsp">
 		<input type = "submit" value="Add new house"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Edit existing house TODO"/>
+	<form action="ChooseHouseToEdit.jsp">
+		<input type = "submit" value="Edit existing house"/>
 	</form>
 	<form action="todo.jsp">
 		<input type = "submit" value="Record a stay/stays at a house/houses TODO"/>

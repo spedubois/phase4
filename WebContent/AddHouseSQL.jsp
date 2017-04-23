@@ -33,6 +33,34 @@
 		
 		return "New house added.";
 	}
+	
+	public void addList(Statement stmt, String login) throws Exception
+	{
+		String query;
+		ResultSet results;
+		query = "select max(hid) max from TH";
+		try{
+			results = stmt.executeQuery(query);
+        } catch(Exception e) {
+			System.err.println("Unable to execute query:"+query+"\n");
+	                System.err.println(e.getMessage());
+			throw(e);
+		}
+		System.out.println("TH:getHousing query = "+query+"\n");
+		while (results.next()){
+			hid = results.getString("max");
+		}
+		
+		query = "insert into Lists(login, hid) values('"+login+"', "+hid+")";
+		try{
+			stmt.executeUpdate(query);
+        } catch(Exception e) {
+			System.err.println("Unable to execute query:"+query+"\n");
+	                System.err.println(e.getMessage());
+			throw(e);
+		}
+		System.out.println("Sucessfully added your new house!\n");	
+	}
 
 }
 %>
@@ -43,7 +71,7 @@
 	String res = addHouse.addNew(con.stmt, request.getParameter("category"), request.getParameter("address")
 			, request.getParameter("url"), request.getParameter("phone"), request.getParameter("year")
 			, request.getParameter("city"), request.getParameter("state"));
-	
+	addHouse.addList(con.stmt, session.getAttribute("login"));
 			out.println("You have added a new house.\n"+
 			"<a href=\"MainScreen.jsp\">Continue</a>");
 			

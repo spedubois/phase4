@@ -58,6 +58,7 @@ ResultSet rs = conn.stmt.executeQuery("SELECT login FROM Users WHERE login = '" 
 			}
 			else
 			{
+				session.setAttribute("login", request.getParameter("login"));
 				out.println("You have been registered\n"+
 				"<a href=\"MainScreen.jsp\">Continue</a>");
 			}

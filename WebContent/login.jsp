@@ -28,6 +28,8 @@ if(!rs.isBeforeFirst())
 }
 else
 {
+
+	session.setAttribute("login", request.getParameter("login"));
 	out.println("Login successful.\n"+
 			"<a href=\"MainScreen.jsp\">Continue</a>");
 	con.closeConnection();
