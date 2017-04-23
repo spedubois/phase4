@@ -18,9 +18,6 @@ or view a list of all registered users*/%>
 	<form action="NewUser.jsp">
 		<input type = "submit" value="Register new user"/>
 	</form>
-	<form action="TestSQL.jsp">
-		<input type = "submit" value="Get all users"/>
-	</form>
 	<form action="ExistingUser.jsp">
 		<input type = "submit" value="Login existing user"/>
 	</form>

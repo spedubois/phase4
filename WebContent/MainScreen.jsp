@@ -27,20 +27,23 @@ and adding a new house.*/ %>
 	<form action="todo.jsp">
 		<input type = "submit" value="Record a favorite house TODO"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Record feedback for a house TODO"/>
+	<form action="AddFeedbackChoice.jsp">
+		<input type = "submit" value="Record feedback for a house"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Rate usefulness of feedback TODO"/>
+	<form action="RateFeedbackChoice.jsp">
+		<input type = "submit" value="Record usefulness of feedback"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Trust other users TODO"/>
+	<form action="UsefulFeedbackChoice.jsp">
+		<input type = "submit" value="Get useful feedbacks"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Search for a house TODO"/>
+	<form action="TrustChoice.jsp">
+		<input type = "submit" value="Trust other users"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="View statistics TODO"/>
+	<form action="SearchChoice.jsp">
+		<input type = "submit" value="Search for a house"/>
+	</form>
+	<form action="StatsChoice.jsp">
+		<input type = "submit" value="View statistics"/>
 	</form>
 </body>
 </html>
