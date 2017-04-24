@@ -38,8 +38,8 @@ public THDetails(){}
 		}
 		System.out.println("TH:getHousing query = "+query+"\n");
 		while (results.next()){
-			result.add(results.getString("pid") + "      " + results.getString("from_date") + "      " + results.getString("to_date") + 
-					"      " + results.getString("cost_per_night") + "\n");	
+			result.add("<b>PID: </b>"+results.getString("pid") + "      " + "<b>FROM: </b>"+results.getString("from_date") + "      " + "<b>TO: </b>"+results.getString("to_date") + 
+					"      " + "<b>COST: </b>"+results.getString("cost_per_night") + "\n");	
 		}
 		
 		return result;
@@ -49,6 +49,7 @@ Connector conn = new Connector();
 %>
 <%
 THDetails THD = new THDetails();
+session.setAttribute("choice", request.getParameter("selection"));
 String select = ""+request.getParameter("selection");
 for(String s:THD.get(conn.stmt, select)){out.println("<p>"+s+"</p>");}
 %>

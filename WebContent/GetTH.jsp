@@ -32,9 +32,9 @@
 		}
 		System.out.println("TH:getHousing query = "+query+"\n");
 		while (results.next()){
-			result.add(results.getString("hid") + "           " + results.getString("category") + "      " + results.getString("address") + 
-					"      " + results.getString("city") + "      " + results.getString("state") + "      " + results.getString("URL") + "      " + results.getString("telephone_number") + 
-					"      " + results.getString("built") + "\n\n");	
+			result.add("<b>HID: </b>"+results.getString("hid") + " " + "<b>CATEGORY: </b>"+results.getString("category") + " " + "<b>ADDRESS: </b>"+results.getString("address") + 
+					" " + "<b>CITY: </b>"+results.getString("city") + " " + "<b>STATE: </b>"+results.getString("state") + " " + "<b>URL: </b>"+ results.getString("URL") + " " + "<b>PHONE #: </b>"+results.getString("telephone_number") + 
+					" " + "<b>BUILT: </b>"+results.getString("built") + "\n\n");	
 		}
 		
 		return result;

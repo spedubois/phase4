@@ -22,10 +22,10 @@ and adding a new house.*/ %>
 		<input type = "submit" value="Edit existing house"/>
 	</form>
 	<form action="StayChoice.jsp">
-		<input type = "submit" value="Record a stay/stays at a house/houses TODO"/>
+		<input type = "submit" value="Record a stay/stays at a house/houses"/>
 	</form>
-	<form action="todo.jsp">
-		<input type = "submit" value="Record a favorite house TODO"/>
+	<form action="FavChoice.jsp">
+		<input type = "submit" value="Record a favorite house"/>
 	</form>
 	<form action="AddFeedbackChoice.jsp">
 		<input type = "submit" value="Record feedback for a house"/>

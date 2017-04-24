@@ -16,8 +16,9 @@
 	class EditHouseList {
 	public EditHouseList(){}
 	
-	public String getList(Statement stmt, String login) throws Exception
+	public ArrayList<String> getList(Statement stmt, String login) throws Exception
 	{
+		ArrayList<String> result = new ArrayList<String>();
 		String query;
 		String resultstr="";
 		ResultSet results;
@@ -32,26 +33,29 @@
 		}
 		System.out.println("TH:getHousing query = "+query+"\n");
 		while (results.next()){
-			resultstr +=  "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-			+ results.getString("hid") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-			+ results.getString("category") + "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" 
-					+ results.getString("address") + "<br>";	
+			result.add(""+ results.getString("hid")+ " "+results.getString("category") + " "
+		+ results.getString("address"));	
 		}
 		
-		return "HID: &nbsp;&nbsp;&nbsp; category: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; address:<br>" 
-		+ resultstr + "<br> Which house would you like to edit? (from Select column)<br>";
+		return result;
 	}
 }
 Connector conn = new Connector();
 %>
 <%
 	EditHouseList editList = new EditHouseList();
-	out.println("<p>" + editList.getList(conn.stmt, (String)session.getAttribute("login")) + "<p>");
-	conn.closeConnection();
+for(String s:editList.getList(conn.stmt, (String)session.getAttribute("login")))
+{
+	out.println(s+"<br/>");
+}
+
+conn.closeConnection();
 
 %>
+<br/>
+<br/>
 <form action="EditTH.jsp">
-	Which house would you like to edit? (hid):<input type="text" name="hid"/>
+	Which house would you like to edit? (hid)<input type="text" name="hid"/><br/>
 	Enter the house's new category:<input type="text" name="category"/><br>
 	Enter the house's new url:<input type="text" name="url"/><br>
 	Enter the house's new phone number:<input type="text" name="phone"/><br>

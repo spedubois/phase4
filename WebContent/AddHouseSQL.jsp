@@ -34,8 +34,9 @@
 		return "New house added.";
 	}
 	
-	public void addList(Statement stmt, String login) throws Exception
+	public void addList(Statement stmt, Object login) throws Exception
 	{
+		String hid = "";
 		String query;
 		ResultSet results;
 		query = "select max(hid) max from TH";
@@ -71,7 +72,7 @@
 	String res = addHouse.addNew(con.stmt, request.getParameter("category"), request.getParameter("address")
 			, request.getParameter("url"), request.getParameter("phone"), request.getParameter("year")
 			, request.getParameter("city"), request.getParameter("state"));
-	addHouse.addList(con.stmt, session.getAttribute("login"));
+	addHouse.addList(con.stmt, session.getAttribute((String)"login"));
 			out.println("You have added a new house.\n"+
 			"<a href=\"MainScreen.jsp\">Continue</a>");
 			

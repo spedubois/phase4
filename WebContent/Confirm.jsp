@@ -19,6 +19,7 @@ public THDetails(){}
 	{
 		String query;
 		String resultstr="";
+		ArrayList<String> result = new ArrayList<String>();
 		ResultSet results;
 		query = "Select t.* From (Select p.pid, from_date, to_date, cost_per_night From Period p, (Select pid, cost_per_night from Available Where hid = "+choice+") as s "
 				+ "WHere p.pid = s.pid) as t where t.pid = " + i;
@@ -31,8 +32,8 @@ public THDetails(){}
 		}
 		System.out.println("TH:confirmHousing query = "+query+"\n");
 		while (results.next()){
-			result.add(results.getString("pid") + "      " + results.getString("from_date") + "      " + results.getString("to_date") + 
-					"      " + results.getString("cost_per_night") + "\n");	
+			result.add("<b>PID: </b>"+results.getString("pid") + "      " + "<b>FROM: </b>"+results.getString("from_date") + "      " + "<b>TO: </b>"+results.getString("to_date") + 
+					"      " + "<b>COST: </b>"+results.getString("cost_per_night") + "\n");	
 		}
 		return result;
 	}
@@ -43,10 +44,11 @@ Connector conn = new Connector();
 <%
 THDetails THD = new THDetails();
 String select = ""+request.getParameter("selection");
+session.setAttribute("choice1", request.getParameter("selection"));
 for(String s:THD.Confirm(conn.stmt, select)){out.println("<p>"+s+"</p>");}
 %>
 <form action="ResMade.jsp">
-Are you sure this is the date you would like?<input type="submit" value="Yes"/>
+Are you sure this is the date you would like?<input type="submit" onclick="insert()" value="Yes"/>
 </form>
 <a href="GetTH.jsp">Go Back</a>
 </body>

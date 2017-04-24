@@ -20,9 +20,10 @@ class VisitSQL
 	{
 	}
 	
-	public void addVisit(Statement stmt, String login, String hid, String pid) throws Exception
+	public String addVisit(Statement stmt, String login, String hid, String pid) throws Exception
 	{
 		String query;
+		String result;
 		query = "insert into Visit(login, hid, pid) values('"+login+"', '"+hid+"', '"+pid+"')";
 		try{
 			stmt.executeUpdate(query);
@@ -31,7 +32,8 @@ class VisitSQL
 	                System.err.println(e.getMessage());
 			throw(e);
 		}
-		System.out.println("You have successfully added your visit!\n");
+		result = "You have successfully added your visit!";
+		return result;
 	}
 
 }
@@ -40,9 +42,9 @@ class VisitSQL
 <%
 	Connector con = new Connector();
 	VisitSQL visit = new VisitSQL();
-	String result = visit.addVisit(con.stmt,(String)session.getAttribute("login"),request.getParameter("hid"),request.getParameter("pid"));
+	String res = visit.addVisit(con.stmt,(String)session.getAttribute("login"),request.getParameter("hid"),request.getParameter("pid"));
 
-	out.println( result + "</br>"+ "<a href=\"StayChoice.jsp\">Back</a> </br> <a href=\"MainScreen.jsp\">Main Screen</a>");
+	out.println(res+"</br>"+ "<a href=\"StayChoice.jsp\">Back</a> </br> <a href=\"MainScreen.jsp\">Main Screen</a>");
 			
 	con.closeConnection();
 %>
