@@ -21,7 +21,7 @@ and adding a new house.*/ %>
 	<form action="ChooseHouseToEdit.jsp">
 		<input type = "submit" value="Edit existing house"/>
 	</form>
-	<form action="todo.jsp">
+	<form action="StayChoice.jsp">
 		<input type = "submit" value="Record a stay/stays at a house/houses TODO"/>
 	</form>
 	<form action="todo.jsp">

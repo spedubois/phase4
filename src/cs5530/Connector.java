@@ -1,4 +1,4 @@
-package p1;
+package cs5530;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
